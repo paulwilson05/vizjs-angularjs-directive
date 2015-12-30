@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/graph.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//visjs.org/dist/vis.js"></script>
+    <script src="../js/angular.visgraph-0.0.1.js"></script>
+    <script src="app/app.js"></script>
+</head>
+
+<body>
+    <div ng-app="app.visgraph" ng-controller="AppCtrl">
+<!--         <h1 class="h1">Viz.js Directive</h1> -->
+        <div ng-switch on="graph.error">
+            <div ng-switch-when="0">
+                <div id="graph" vis-graph data="graph.data" options="graph.options" event="select" callback="callbackFunction(params)"></div>
+            </div>
+            <div ng-switch-default></div>
+        </div>
+    </div>
+</body>
+
+</html>
